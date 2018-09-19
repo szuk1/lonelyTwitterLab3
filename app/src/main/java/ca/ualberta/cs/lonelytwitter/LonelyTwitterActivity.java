@@ -58,7 +58,13 @@ public class LonelyTwitterActivity extends Activity {
 
 	private String[] loadFromFile() {
 		ArrayList<String> tweets = new ArrayList<String>();
+		ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
+		NormalTweet myTweet = new NormalTweet();
+		tweetList.add(myTweet);
 		try {
+			Tweet newTweet = new NormalTweet("");
+			newTweet.setMessage("long message eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+
 			FileInputStream fis = openFileInput(FILENAME);
 			BufferedReader in = new BufferedReader(new InputStreamReader(fis));
 			String line = in.readLine();
@@ -72,6 +78,8 @@ public class LonelyTwitterActivity extends Activity {
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TweetTooLongException e) {
 			e.printStackTrace();
 		}
 		return tweets.toArray(new String[tweets.size()]);
