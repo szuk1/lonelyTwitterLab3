@@ -1,4 +1,10 @@
 package ca.ualberta.cs.lonelytwitter;
+/** @author ye
+ * @since the beginning of time
+ * @version 1.0
+ *
+ *
+ */
 
 import java.util.ArrayList;
 import java.util.Date;
